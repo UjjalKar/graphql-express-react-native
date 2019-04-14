@@ -35,11 +35,11 @@ export default app => {
     })
   });
 
-  mocks().then(() => {
-    server.applyMiddleware({
-      app,
-      bodyParser
-    });
-    // app.use(bodyParser.json());
+  // mocks().then(() => {
+  server.applyMiddleware({
+    app,
+    bodyParser
   });
+  // app.use(bodyParser.json());
+  // });
 };

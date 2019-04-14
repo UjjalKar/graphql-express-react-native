@@ -10,7 +10,7 @@ export default `
     type User {
         _id: ID!
         username: String
-        email: String
+        email: String!
         firstName: String
         lastName: String
         avatar: String
@@ -20,7 +20,7 @@ export default `
     type Me {
         _id: ID!
         username: String
-        email: String
+        email: String!
         firstName: String
         lastName: String
         avatar: String
@@ -30,6 +30,8 @@ export default `
     type Tweet {
         _id: ID!
         text: String!
+        user: User!
+        favoriteCount: Int!
         createdAt: Date!
         updatedAt: Date!
     }
@@ -38,6 +40,7 @@ export default `
         getTweet(_id: ID!): Tweet
         getTweets: [Tweet]
         me: Me
+        getUserTweets: [Tweet]
     }
 
     type Mutation {
